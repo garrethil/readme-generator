@@ -2,7 +2,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 
-const generateREADME = ({ title, description, installation, usage, license, contribute}) =>
+const generateReadme = ({ title, description, installation, usage, license, contribute, tests, github, email}) =>
   `# ${title}
 
   ## Description
@@ -26,19 +26,19 @@ const generateREADME = ({ title, description, installation, usage, license, cont
 
   
   ## License
-    ${license}
+  ${license}
 
 
   ## How to Contribute
   ${contribute}
-
-
-
+    
   ## Tests
-
+  ${tests}
 
   ## Questions
-  
+  [Github Profile](https://github.com/${github})
+
+  For any further questions you may use this email: ${email}
   `;
 
 inquirer
@@ -74,9 +74,24 @@ inquirer
       name: 'contribute',
       message: 'How should others go about making their own contributions to your project?',
     },
+    {
+        type: 'input',
+        name: 'tests',
+        message: 'Are there any tests you wrote for this project? How could we run them?',
+      },
+      {
+        type: 'input',
+        name: 'github',
+        message: 'Please enter your github username.',
+      },
+      {
+        type: 'input',
+        name: 'email',
+        message: 'Please enter an email users/contributers could reach you.',
+      },
   ])
   .then((answers) => {
-    const readmeContent = generateREADME(answers);
+    const readmeContent = generateReadme(answers);
 
     fs.writeFile('README.md', readmeContent, (err) =>
       err ? console.log(err) : console.log('Your README.md file was created for your project!')
