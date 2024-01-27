@@ -1,7 +1,8 @@
 const inquirer = require('inquirer');
+const fs = require('fs');
 
 
-const generateREADME = ({ title, description}) =>
+const generateREADME = ({ title, description, installation, usage, license, contribute}) =>
   `# ${title}
 
   ## Description
@@ -18,18 +19,18 @@ const generateREADME = ({ title, description}) =>
   
   
   ## Installation
-  
-  N/A
+  ${installation}
   
   ## Usage
-
+  ${usage}  
 
   
   ## License
+    ${license}
 
 
-
-  ## Contributing
+  ## How to Contribute
+  ${contribute}
 
 
 
@@ -70,8 +71,8 @@ inquirer
     },
     {
       type: 'input',
-      name: 'linkedin',
-      message: 'Enter your LinkedIn URL.',
+      name: 'contribute',
+      message: 'How should others go about making their own contributions to your project?',
     },
   ])
   .then((answers) => {
