@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Readme Generator
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -19,7 +20,7 @@
   you must install inquirer to run the readme generator.
   
   ## Usage
-  when finishing up a large project it can be laborious to then sit down and make a full readme file in markdown format. The readme generator is meant to allow the user to just answer a short list of questions and then produce a full complete readme file to go along with your project.  
+  when finishing up a large project it can be laborious to then sit down and make a full readme file in markdown format. The readme generator is meant to allow the user to just answer a short list of questions and then produce a full complete readme file to go along with your project.
 
   
   ## License

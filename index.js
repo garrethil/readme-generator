@@ -108,6 +108,21 @@ inquirer
       name: "email",
       message: "Please enter an email users/contributers could reach you.",
     },
+    {
+        type: 'input',
+        name: 'tests',
+        message: 'Are there any tests you wrote for this project? How could we run them?',
+      },
+      {
+        type: 'input',
+        name: 'github',
+        message: 'Please enter your github username.',
+      },
+      {
+        type: 'input',
+        name: 'email',
+        message: 'Please enter an email users/contributers could reach you.',
+      },
   ])
   .then((answers) => {
     if (answers.license === "MIT License") {
